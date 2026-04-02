@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Project Gallery </title>
+   <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <!-- Navigation Bar-->
+     <nav class="navbar">
+        <div class="nav-logo"> My Portfolio</div>
+       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+     </nav>
+
+       <!-- Page Header-->
+        <section class="page-header">
+            <h1>Project Gallery</h1>
+            <p> A collecttion of my microcontroller project using STM32</p>
+
+        </section>"
+
+        <!-- Project cards grid-->
+         <section class="gallery">
+
+
+            <!-- Card 1 -Gas Detection System -->
+             <div class="project-card">
+                <div class="card-image">
+                    <span class="card-icon"></span>
+                </div>
+                <div class="card-body">
+                    <h3> Gas Detection & Alarm System</h3>
+                    <p>
+                        Detects harmful gases like CO and methane using MQ sensor and STM32
+                        Triggers buzzer and LED alarms. Display data on LCD and sends alerts
+                        via Bluetooth to a mobile app.
+                    </p>
+                  <div class="progress-label">
+                    <span>Completion</span>
+                    <span>100%</span> 
+                  </div>
+               <!--Progress bar animates to 100% on page load -->
+               <div class="progress-bar">
+               <div class="progress-fill" style="--target-width: 100%;"></div>"
+               </div>
+               <a href="project1.html" class="btn">View Project </a>
+               </div>
+               </div>
+
+               <!-- Card 2 - OLED signal display -->
+                <div class="project-card">
+                <div class="card-image">
+                <span class="card-icon"></span>
+                </div>
+                <div class="card-body">
+                    <h3> OLED Signal Display</h3>
+                    <p>
+                        Displays real-time sensor data on a OLED screen using STM32F401RE.
+                        Features LDR light sensor, potentiometer ADC/DAC feedback and PWN 
+                        LED with live graphs on OLED display
+                    </p>
+                  <div class="progress-label">
+                    <span>Completion</span>
+                    <span>100%</span> 
+                  </div>
+                  <div class="progress-bar">
+                  <div class="progress-fill" style="--target-width: 100%;"></div>
+                  </div>
+                  <a href="project2.html" class="btn">View Project </a>
+                </div>
+
+            </div>
+
+            <!-- Card 3 - Pushbutton LED OLED-->
+             <div class="project-card">
+                <div class="card-image">
+                    <span class ="card-icon"></span>
+                    </div>
+                    <div class="card-body">
+                        <h3> Pushbutton LED and OLED Display</h3>
+                        <p>
+                            Interfaces pushbuttons and LEDs with STM32F401RE.
+                            Displays status messages on OLED using SPI communication.
+                        </p>
+                        <div class="progress-label">
+                            <span >Completion</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--target-width: 100%;"></div>
+                        </div>
+                        <a href="project3.html" class="btn">View Project </a>
+                    </div>
+                </div>
+         </section>
+           
+         <!-- Footer Section-->
+          <p>         
+            @2026 My Microcontroller Portfolio. All rights reserved. Designed by Okambekwa </p>
+        </footer>
+</body>
+</html>

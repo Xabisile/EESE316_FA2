@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-logo">My Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Commonly asked  questions about my projects and how they work</p>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                Can I use your project code for my own work?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Yes, you can use the code from my projects as a reference for your own work. However,
+                    do not copy the code directly without understanding it. It's important to learn from 
+                    the code and adapt it to your own needs rather than just copying it.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                What programming languages do you use for your projects?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    All microcontroller projects were written in C language using the STM32 HAL library.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                Do you provide project documentation and reports?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Not really it depends on complexity of the project. I only upload documentation for
+                    projects that are more complex and require detailed explanations. For simpler projects,
+                    I may only provide the source code and a brief description.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                Can I contact you for help with my own projects?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Yes, you can contact me through the contact page on this website. 
+                    I'm happy to help answer questions and provide guidance on microcontroller projects.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+        <p>@2026 My Microcontroller Portfolio . Designed by Okambekwa</p>
+    </footer>
+
+    <!-- Javascript to handle FAQ toggling -->
+    <script>
+        function toggleFAQ(button){
+            //Find the answer div right after the clicked button
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+
+            //Check if this answer is already open 
+            const isOpen = answer.classList.contains('open');
+
+            //Close all answers
+            document.querySelectorAll('.faq-answer').forEach(function(a) {
+                a.classList.remove('open');
+            });
+
+            document.querySelectorAll('.faq-icon').forEach(function(i){
+                i.textContent = '+';
+            });
+
+            document.querySelectorAll('.faq-question').forEach(function(q){
+                q.classList.remove('active');
+            });
+
+            //if it was closed open it
+            if (!isOpen){
+                answer.classList.add('open');
+                icon.textContent = '-';
+                button.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

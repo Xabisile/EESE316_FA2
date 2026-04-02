@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <!--Makes the site look good on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Microcontroller Portfolio</title>
+    <!-- link to external CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--Navigation Bar-->
+    <nav class=" navbar">
+        <div class="nav-logo"> My Portfolio</div>
+       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+</ul>
+    </nav>
+       
+    <!--Hero Section( Welcome area)-->
+    <section class="hero">
+        <div class ="hero-content">
+            <!--this heading will animate when page load-->
+            <h1 class="animate-title">Welcome to My Microcontroller Portfolio</h1>
+            <p class="animate-subtitle">
+             Exploring embedded systems and microcontroller projects using stm32 
+
+            </p>
+            <!-- Button that takes user to gallery page-->
+            <a href="gallery.html" class="btn">View My Projects</a>
+        </div>
+
+        <!-- Animated LED icons for decoration-->
+         <div class="led-container">
+            <div class="led red"></div>
+            <div class="led green"></div>
+            <div class="led blue"></div>
+         </div>
+    </section>
+
+    <!-- ABOUT SECTION-->
+     <section class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate Electronic engineer and embedded systems developer with experience in designing 
+            and implementing microcontroller-based projects.
+             My portfolio showcases a variety of projects that demonstrate my skills in programming, circuit design, and problem-solving.
+        </p>
+
+        <!-- Three skill highlights boxes-->
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="skill-icon"></span>
+                <h3>Hardware</h3>
+                <p>STM32, sensors, displays, Bluetooth modules</p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon"></span>
+                <h3>Software</h3>
+                <p>C language, STM32CubeIDE, HAL library</p>
+                </div>
+                <div class="skill-card">
+                <span class="skill-icon"></span>
+                <h3> Protocols</h3>
+                <p>SPI, I2C,UAET, ADC/DAC, PWM</p>
+                </div>
+                </div>
+            
+     </section>
+
+     <!-- Footer Section-->
+      <footer>
+        <p>
+            @2026 My Microcontroller Portfolio. All rights reserved. Designed by Okambekwa </p>  
+      </footer>
+     
+</body>
+</html>
