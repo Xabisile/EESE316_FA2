@@ -1,0 +1,182 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLED Signal Visualizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-logo">My Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PROJECT HEADER -->
+    <section class="project-header">
+        <div class="project-header-content">
+            <span class="project-tag">EEDE316</span>
+            <h1>OLED Signal Visualizer</h1>
+            <p>
+                An STM32F401RE based signal processing system that displays live graphs
+                of light trends and potentiometer waveform on the OLED display with ADC 
+                to DAC feedback and PWN LED control
+            </p>
+            <div class="component-icons">
+                <div class="comp-icon"><span>OLED Display</span></div>
+                <div class="comp-icon"><span>STM32 Microcontroller</span></div>
+                <div class="comp-icon"><span>LDR Sensor</span></div>
+                <div class="comp-icon"><span>PWM LED</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PROJECT CONTENT -->
+    <main class="project-content">
+
+        <!-- OBJECTIVES -->
+        <section class="content-section">
+            <h2>Objectives</h2>
+            <p>
+                The objective of this project is to use 0.96 OLED display with the STM32F401RE Nucleo board
+                and visualise real time signal data. The system reads analogue values from an LDR light sensor 
+                and a potentiometer processes them through the ADC outputs the results via the DAC and control 
+                a PWN LED. All live infromatio including light trends, potentiometer waveforms and the ADC/DAC 
+                values are displayed as the graphs on the OLED screen.
+            </p>
+        </section>
+
+        <!-- WORKING PRINCIPLES -->
+        <section class="content-section">
+            <h2>Working Principles</h2>
+            <p>
+                The LDR forms a voltage divider with a 10k ohm resistor. As light intensity changes 
+                the voltage acroos the LDR changes and is read by the STM32 ADC on one channel. 
+                A 10k ohm potentiometer connected to second ADC channel provides a manually adjusable 
+                input signal. The ADC readings are fed into the DAC to produce an analogue output,
+                creating a feedback loop for signal processing visualisation. A PWM signal drives an
+                LED whose brighness varies with the potentiometer position. All values are plotted as 
+                scrolling graphs on the OLED display using I2C communication.
+            </p>
+        </section>
+
+        <!-- COMPONENTS -->
+        <section class="content-section">
+            <h2>Components Used</h2>
+            <div class="components-grid">
+
+                <div class="component-item">
+                    <span class="comp-number">01</span>
+                    <div>
+                        <h4>STM32F401RE Nucleo-64 board</h4>
+                        <p>Main microcontroller running embedded C with HAL library</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">02</span>
+                    <div>
+                        <h4>0.96 inch OLED Display</h4>
+                        <p>Displays live graphs of sensor data and ADC/DAC values</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">03</span>
+                    <div>
+                        <h4>LDR + 10k ohm Resistor</h4>
+                        <p>Light sensor forming a voltage divider for ADC input</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">04</span>
+                    <div>
+                        <h4>10k ohm Potentiometer</h4>
+                        <p>Provides adjustable analogue input for ADC to DAC feedback</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">05</span>
+                    <div>
+                        <h4>LED + 220 ohm Resistor</h4>
+                        <p>PWM controlled LED with brightness varying by potentiometer</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">06</span>
+                    <div>
+                        <h4>Breadboard and jumper wires</h4>
+                        <p>Used for connection of the circuit</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="content-section">
+            <h2>Results and Observations</h2>
+            <p>
+                The OLED display successfully provided scrolling graphs showing real time
+                light intensity trends from the LDR and waveform data from the potentiometer.
+                The ADC to DAC feedback loop operated correctly and the PWM LED brightness 
+                responded accurately to potentiometer changes. The system demonstrated practical 
+                signal processing and visualisation on an embedded system.
+            </p>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>OLED Graphs</h3>
+                    <p>Live scrolling graphs displayed correctly for both LDR and potentiometer data</p>
+                </div>
+                <div class="result-card">
+                    <h3>ADC / DAC Feedback</h3>
+                    <p>Analogue input successfully converted and output through DAC feedback loop</p>
+                </div>
+                <div class="result-card">
+                    <h3>PWM LED</h3>
+                    <p>LED brightness varied smoothly and accurately with potentiometer position</p>
+                </div>
+            </div>
+        </section>
+
+       <!-- DOWNLOADS -->
+<section class="content-section">
+    <h2>Downloadable Resources</h2>
+    <p>Download the project files below:</p>
+    <div class="downloads-grid">
+        <a href="downloads/project2_files.zip" class="download-card" target="_blank">
+            <span class="download-icon">[ ZIP ]</span>
+            <div>
+                <h4>Project Files</h4>
+                <p>Source code, circuit diagram and report</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+        <!-- NAVIGATION BUTTONS -->
+        <div class="project-nav">
+            <a href="project1.html" class="btn">Previous Project</a>
+            <a href="project3.html" class="btn">Next Project</a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>@ 2026 My Microcontroller Portfolio | EESE316. Designed by Okambekwa </p>
+    </footer>
+
+</body>
+</html>
