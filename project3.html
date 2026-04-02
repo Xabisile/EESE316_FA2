@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushbutton LED and OLED Display</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!--NAVIGATION BAR-->
+    <nav class="navbar">
+        <div class="nav-logo">My Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--PROJECT HEADER-->
+    <section class="project-header">
+        <div class="project-header-content">
+            <span class="project-tag">EEDE316</span>
+            <h1>Pushbutton LED and OLED Display</h1>
+            <p>
+                A simple embedded system project using STM32F401RE Nucleo board to control an LED and display 
+                messages on an OLED screen based on pushbutton inputs.
+            </p>
+            <div class="component-icons">
+                <div class="comp-icon"><span>OLED Display</span></div>
+                <div class="comp-icon"><span>STM32 Microcontroller</span></div>
+                <div class="comp-icon"><span>Pushbutton</span></div>
+                <div class="comp-icon"><span>LED</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!--MAIN PROJECT CONTENT-->
+    <main class="project-content">
+
+        <!--OBJECTIVES-->
+        <section class="content-section">
+            <h2>Objectives</h2>
+            <p>
+                The objective of this project is to create a simple embedded system that demonstrates basic input 
+                and output control using the STM32F401RE Nucleo board. The system will read the state of a pushbutton 
+                and control an LED accordingly, while also displaying messages on an OLED screen to indicate the button state.
+            </p>
+        </section>
+
+        <!--WORKING PRINCIPLES-->
+        <section class="content-section">
+            <h2>Working Principles</h2>
+            <p>
+                The system operates by continuously monitoring the state of a pushbutton connected to the microcontroller. 
+                When the button is pressed, the microcontroller turns on an LED and updates the OLED display to show a 
+                message indicating that the button is pressed. When the button is released, the LED turns off and the 
+                display updates to show that the button is not pressed. This simple interaction demonstrates how embedded 
+                systems can interface with both input devices (the pushbutton) and output devices (the LED and OLED display) 
+                to create a responsive user experience.
+            </p>
+        </section>
+
+        <!--COMPONENTS-->
+        <section class="content-section">
+            <h2>Components Used</h2>
+            <div class="components-grid">
+
+                <div class="component-item">
+                    <span class="comp-number">1</span>
+                    <div>
+                        <h3>STM32F401RE Nucleo Board</h3>
+                        <p>Microcontroller development board used as the brain of the project to control inputs and outputs.</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">2</span>
+                    <div>
+                        <h3>2 Pushbuttons</h3>
+                        <p>Digital input devices used to trigger LED and display events.</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">03</span>
+                    <div>
+                        <h3>LED</h3>
+                        <p>Output device that turns on or off based on the pushbutton state.</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">04</span>
+                    <div>
+                        <h3>0.96 inch OLED Display</h3>
+                        <p>Output device that displays messages indicating the state of the pushbutton.</p>
+                    </div>
+                </div>
+
+                <div class="component-item">
+                    <span class="comp-number">05</span>
+                    <div>
+                        <h3>Resistors and Breadboard</h3>
+                        <p>Used for connecting components and ensuring proper current flow in the circuit.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--RESULTS-->
+        <section class="content-section">
+            <h2>Results</h2>
+            <p>
+                The system successfully detected button press events and toggled the corresponding
+                LED state while updating the OLED display with the correct messages. The project 
+                demonstrated practical GPIO input handling, digital output control and I2C based display
+                interfacing using the STM32F401RE Nucleo board.
+            </p>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Button Press Detected</h3>
+                    <p>The system correctly detected when the pushbutton was pressed.</p>
+                </div>
+                <div class="result-card">
+                    <h3>LED Control</h3>
+                    <p>The LED turned on when the button was pressed and off when released.</p>
+                </div>
+                <div class="result-card">
+                    <h3>OLED Display Updated</h3>
+                    <p>The display showed the correct message for each button state.</p>
+                </div>
+            </div>
+        </section>
+
+           <!-- DOWNLOADS -->
+<section class="content-section">
+    <h2>Download Project Files</h2>
+    <p>Download the project files below:</p>
+    <div class="downloads-grid">
+
+        <a href="downloads/project3_circuit.pdf" class="download-card" target="_blank">
+            <span class="download-icon">[ PDF ]</span>
+            <div>
+                <h4>Circuit Diagram</h4>
+                <p>Full wiring schematic</p>
+            </div>
+        </a>
+
+        <a href="downloads/project3_report.pdf" class="download-card" target="_blank">
+            <span class="download-icon">[ PDF ]</span>
+            <div>
+                <h4>Project Report</h4>
+                <p>Documentation and analysis</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- SOURCE CODE -->
+<section class="content-section">
+    <h2>Source Code</h2>
+    <p>Embedded C code for the Pushbutton LED and OLED Display:</p>
+    <div class="code-block">
+        <pre>
+#include "main.h"
+#include &lt;string.h&gt;
+
+I2C_HandleTypeDef hi2c1;
+UART_HandleTypeDef huart2;
+
+void OLED_Init(void);
+void OLED_Clear(void);
+void OLED_ShowString(uint8_t row, const char* text);
+
+int main(void)
+{
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
+    MX_I2C1_Init();
+
+    OLED_Init();
+    OLED_Clear();
+    OLED_ShowString(0, "SYSTEM READY");
+
+    HAL_GPIO_WritePin(GPIOC, LED1_Pin|LED2_Pin|LED3_Pin, GPIO_PIN_RESET);
+
+    while (1)
+    {
+        uint8_t btn1 = (HAL_GPIO_ReadPin(GPIOA, BTN2A1_Pin) == GPIO_PIN_RESET);
+        uint8_t btn2 = (HAL_GPIO_ReadPin(GPIOA, BTN2_Pin)   == GPIO_PIN_RESET);
+
+        if (btn1 && btn2)
+        {
+            HAL_GPIO_WritePin(GPIOC, LED1_Pin|LED2_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(GPIOC, LED3_Pin, GPIO_PIN_SET);
+            OLED_Clear();
+            OLED_ShowString(0, "BOTH BUTTONS");
+            OLED_ShowString(1, "PRESSED");
+            HAL_Delay(5000);
+            HAL_GPIO_WritePin(GPIOC, LED3_Pin, GPIO_PIN_RESET);
+            OLED_Clear();
+            OLED_ShowString(0, "SYSTEM READY");
+        }
+        else if (btn1)
+        {
+            HAL_GPIO_WritePin(GPIOC, LED2_Pin|LED3_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_SET);
+            OLED_Clear();
+            OLED_ShowString(0, "BUTTON 1");
+            OLED_ShowString(1, "PRESSED");
+            HAL_Delay(5000);
+            HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_RESET);
+            OLED_Clear();
+            OLED_ShowString(0, "SYSTEM READY");
+        }
+        else if (btn2)
+        {
+            HAL_GPIO_WritePin(GPIOC, LED1_Pin|LED3_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_SET);
+            OLED_Clear();
+            OLED_ShowString(0, "BUTTON 2");
+            OLED_ShowString(1, "PRESSED");
+            HAL_Delay(5000);
+            HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_RESET);
+            OLED_Clear();
+            OLED_ShowString(0, "SYSTEM READY");
+        }
+        HAL_Delay(50);
+    }
+}
+        </pre>
+    </div>
+</section>
+</div>
+            </div>
+        </section>
+
+        <!--NAVIGATION BUTTONS-->
+        <div class="project-nav">
+            <a href="project2.html" class="btn">Previous Project</a>
+            <a href="gallery.html" class="btn">Back to Gallery</a>
+        </div>
+
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+        <p>@2026 My Microcontroller Portfolio | EESE316. All rights reserved. Designed by Okambekwa</p>
+    </footer>
+
+</body>
+</html>
